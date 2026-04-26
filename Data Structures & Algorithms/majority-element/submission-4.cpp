@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int majority{}, count{};
+        for (int n : nums) {
+            if (!count)
+                majority = n;
+            count += n == majority ? 1 : -1;
+        }
+        return majority;
+    }
+};
